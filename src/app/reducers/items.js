@@ -1,4 +1,4 @@
-const initialsState = {
+const initialState = {
   users: [1, 2, 3],
   usersById: {
       1: {

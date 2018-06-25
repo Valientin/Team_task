@@ -11,8 +11,8 @@ export class Home extends React.Component {
 		return(
 			<div className="root-wrapper">
                 <div className="left-block">
-                    <h1>{title}</h1>
-                    <h4>{description}</h4>
+                    <h1 className="left-block__title">{title}</h1>
+                    <h4 className="left-block__description">{description}</h4>
                 </div>
                 <div className="right-block">
 
