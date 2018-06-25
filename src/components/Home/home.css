@@ -9,12 +9,26 @@
     width: 100%;
     display: block;
     background: #2b2f3e;
+    padding-top: 20px;
+    padding-left: 20px;
+    box-sizing: border-box;
 }
 
-.right-block{
+.right-block {
     min-height: 100vh;
     height: 100%;
     width: 100%;
     display: block;
     background: #eee;
+}
+.left-block__title{
+    text-transform: uppercase;
+    font-size: 30px;
+    color: #fffefe;
+    font-weight: 200;
+}
+
+.left-block__description{
+    font-weight: 200;
+    color: #656565;
 }
