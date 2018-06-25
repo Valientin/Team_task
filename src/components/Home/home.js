@@ -5,7 +5,7 @@ import './home.css';
 import Items from '../../containers/items';
 import { title, description } from './strings';
 
-export class Home extends React.Component {
+export default class Home extends React.Component {
 
 	render(){
 		return(
