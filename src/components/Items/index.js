@@ -1,4 +1,4 @@
-import {Items} from './items'
+import Items from './items'
 
 
-export {Items}
+export default Items;

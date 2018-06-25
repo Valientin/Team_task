@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import {Items} from '../components/Items'
+import Items from '../components/Items'
 import * as items from '../app/actions/items'
 
 function mapDispatchToProps(dispatch){
@@ -12,7 +12,7 @@ function mapDispatchToProps(dispatch){
 
 const mapStateToProps = (state) => {
     return{
-		items: state.items.items
+		items: state.items.itemsById
 	}
 };
 

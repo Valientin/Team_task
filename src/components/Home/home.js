@@ -1,8 +1,8 @@
 import React from 'react';
-import { connect } from 'react-redux';
 
 import './home.css';
 
+import Items from '../../containers/items';
 import { title, description } from './strings';
 
 export class Home extends React.Component {
@@ -15,7 +15,9 @@ export class Home extends React.Component {
                     <h4 className="left-block__description">{description}</h4>
                 </div>
                 <div className="right-block">
-
+                    <div className="items-wrapper">
+                        <Items />
+                    </div>
                 </div>
 			</div>
 		)

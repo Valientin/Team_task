@@ -3,21 +3,29 @@ import { connect } from 'react-redux';
 
 import './items.css';
 
-import { title, description } from './strings';
+class Items extends React.Component {
 
-export class Items extends React.Component {
-	componentDidMount() {
-        this.props.userActions.ShowItems()
+    componentDidMount(){
+        console.log(this.props)
     }
+
+    showItems = (items) => (
+        items ?
+            items.map((item, i) => (
+                <div key={i}>
+                    {item.title}
+                </div>
+            ))
+        : null
+        )
+
 	render(){
 		  return (
-            <ul>
-                {this.props.items.map((item) => (
-                    <Fragment key={item.id}>
-                      <li>{item.title}</li>
-                    </Fragment>
-                ))}
-            </ul>
+            <div>
+                {this.showItems(this.props.items)}
+            </div>
         );
 	}
 }
+
+export default Items;
