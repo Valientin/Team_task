@@ -1,0 +1,12 @@
+.root-wrapper {
+    display: block;
+}
+
+.left-block {
+    min-height: 100vh;
+    height: 100%;
+    max-width: 220px;
+    width: 100%;
+    display: block;
+    background: #2b2f3e;
+}
