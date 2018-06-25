@@ -1,21 +1,45 @@
 {
-  "name": "items_project",
-  "version": "0.1.0",
-  "private": true,
-  "dependencies": {
-    "react": "^16.4.1",
-    "react-dom": "^16.4.1",
-    "react-redux": "^5.0.7",
-    "react-router-dom": "^4.3.1",
-    "react-scripts": "1.1.4",
-    "redux": "^4.0.0",
-    "redux-promise": "^0.6.0",
-    "redux-saga": "^0.16.0"
-  },
-  "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test --env=jsdom",
-    "eject": "react-scripts eject"
-  }
+	"name": "reactredux-test",
+	"version": "1.0.0",
+	"description": "",
+	"main": "index.js",
+	"scripts": {
+		"build": "webpack",
+		"start": "node server.js"
+	},
+	"built": "webpack",
+	"author": "Maxim Rudenko",
+	"license": "ISC",
+	"devDependencies": {
+		"babel-core": "^6.26.3",
+		"babel-loader": "^7.1.4",
+		"babel-plugin-transform-runtime": "^6.23.0",
+		"babel-preset-es2015": "^6.24.1",
+		"babel-preset-react": "^6.24.1",
+		"babel-preset-stage-0": "^6.24.1",
+		"css-loader": "^0.28.11",
+		"express": "^4.16.3",
+		"node-sass": "^4.9.0",
+		"react-hot-loader": "^4.3.2",
+		"sass-loader": "^7.0.3",
+		"style-loader": "^0.21.0",
+		"webpack": "^4.12.0",
+		"webpack-dev-middleware": "^3.1.3",
+		"webpack-hot-middleware": "^2.22.2"
+	},
+	"dependencies": {
+		"babel-polyfill": "^6.26.0",
+		"babel-runtime": "^6.26.0",
+		"lite-server": "^2.3.0",
+		"react": "^16.4.0",
+		"react-dom": "^16.4.0",
+		"react-redux": "^5.0.7",
+		"react-router-dom": "^4.3.1",
+		"redux": "^4.0.0",
+		"redux-promise": "^0.6.0",
+		"redux-saga": "^0.16.0",
+		"redux-thunk": "^2.3.0",
+		"regenerator-runtime": "^0.11.1",
+		"webpack-cli": "^3.0.4"
+	}
 }
