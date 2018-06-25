@@ -1,5 +1,5 @@
-export function setName(id) {
+export function showItems() {
 	return {
-		type: 'SET_NAME'
+		type: 'SHOW_ITEMS'
 	}
 }

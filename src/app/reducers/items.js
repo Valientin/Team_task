@@ -1,6 +1,6 @@
 const initialsState = {
-  users: [1, 2, 3],
-  usersById: {
+  items: [1, 2, 3],
+  itemsById: {
       1: {
         title: 'First items',
         comments: [],
@@ -16,8 +16,8 @@ const initialsState = {
 
 export function items(state = initialState, action) {
   switch (action.type) {
-    case 'SET_IITEMS':
-      return { ...state, users: state.usersById }
+    case 'SHOW_ITEMS':
+      return { ...state, items: state.itemsById }
     default:
       return state;
   }

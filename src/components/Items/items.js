@@ -6,18 +6,18 @@ import './items.css';
 import { title, description } from './strings';
 
 export class Items extends React.Component {
-
+	componentDidMount() {
+        this.props.userActions.ShowItems()
+    }
 	render(){
-		return(
-			<div className="root-wrapper">
-                <div className="left-block">
-                    <h1>{title}</h1>
-                    <h4>{description}</h4>
-                </div>
-                <div className="right-block">
-
-                </div>
-			</div>
-		)
+		  return (
+            <ul>
+                {this.props.items.map((item) => (
+                    <Fragment key={item.id}>
+                      <li>{item.title}</li>
+                    </Fragment>
+                ))}
+            </ul>
+        );
 	}
 }
