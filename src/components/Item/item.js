@@ -3,18 +3,21 @@ import React from 'react';
 import './item.scss';
 import {Delete} from './strings';
 
-const Item = (props) => {
+export default class Item extends React.Component{
 
-    return(
-        <div className={props.active ? 'items-block__item active' : 'items-block__item'}>
-            <div className="items-block__title">
-                <span>{props.name}</span>
-                <span className="items-block__count">{props.comments.length}</span>
-            </div>
-            <button className="items-block__delete">{Delete}</button>
-        </div>
-    )
+	onDeleteBtnClick() {
+		this.props.deleteItem(this.props.id);
+	}
+	render(){
+		return(
+	        <div className={this.props.active ? 'items-block__item active' : 'items-block__item'}>
+	            <div className="items-block__title">
+	                <span>{this.props.name}</span>
+	                <span className="items-block__count">{this.props.comments.length}</span>
+	            </div>
+	            <button className="items-block__delete" onClick={::this.onDeleteBtnClick}>{Delete}</button>
+	        </div>
+    	)
+	}
 }
 
-
-export default Item;

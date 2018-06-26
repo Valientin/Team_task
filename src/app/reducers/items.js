@@ -1,16 +1,16 @@
-import { ADD_ITEM, SET_ACTIVE } from '../actions/actionTypes';
+import { ADD_ITEM, SET_ACTIVE, DELETE_ITEM } from '../actions/actionTypes';
 
 const initialState = {
   items: ['f42145fs', 'r2351dfad'],
   itemsById: {
     'f42145fs': {
       name: 'First items with custom name',
-      comments: [],
+      comments: ['asd','asdasdasda','asdasdasdadasd'],
       active: false
     },
     'r2351dfad': {
       name: 'Second item is active',
-      comments: [],
+      comments: ['asdsdjasdladshajldhjld',],
       active: true
     }
   }
@@ -28,6 +28,10 @@ export function items(state = initialState, action) {
       return {
         ...state
       }
+    case DELETE_ITEM:
+      return Object.assign({}, state, {
+        items: [...state.items.filter(item => item !== action.payload)],
+      });
     default:
       return state;
   }

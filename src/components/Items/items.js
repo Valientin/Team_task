@@ -105,7 +105,7 @@ class Items extends React.Component {
     showItems = (items, itemsById) => {
         return Array.isArray(items)  ?
             items.map((item, i) => (
-                <Item key={i} {...itemsById[item]} />
+                <Item key={item} {...itemsById[item]} id = {item} deleteItem = {this.props.deleteItem} />
             ))
         : null
     }
