@@ -49,6 +49,7 @@ class Items extends React.Component {
             const newFormData = {...this.state.formData}
             for(let key in this.state.formData){
                 newFormData[key].value = '';
+                newFormData[key].valid = false;
             }
             this.setState({
                 postError: false,
