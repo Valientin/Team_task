@@ -1,14 +1,14 @@
 import { ADD_ITEM, SET_ACTIVE } from '../actions/actionTypes';
 
 const initialState = {
-  items: [1, 2],
+  items: ['f42145fs', 'r2351dfad'],
   itemsById: {
-    1: {
+    'f42145fs': {
       name: 'First items with custom name',
       comments: [],
       active: false
     },
-    2: {
+    'r2351dfad': {
       name: 'Second item is active',
       comments: [],
       active: true

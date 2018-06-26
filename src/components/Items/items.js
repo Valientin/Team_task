@@ -36,7 +36,7 @@ class Items extends React.Component {
     addItem = () => {
         let dataToSubmit = {};
         let formIsValid = true;
-        let nextId = this.props.items.length + 1;
+        let nextId = Math.random().toString(36).substr(2, 9);
 
         for(let key in this.state.formData){
             dataToSubmit[key] = this.state.formData[key].value;
