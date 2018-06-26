@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 
 import FormFields from '../FormFields';
 import Item from '../Item';
+
 import './items.scss';
 import {title, addNew} from './strings';
 
@@ -105,7 +106,7 @@ class Items extends React.Component {
     showItems = (items, itemsById) => {
         return Array.isArray(items)  ?
             items.map((item, i) => (
-                <Item key={item} {...itemsById[item]} id = {item} deleteItem = {this.props.deleteItem} />
+                <Item key={item} {...itemsById[item]} id = {item} deleteItem = {this.props.deleteItem} showComments = {this.props.showComments} />
             ))
         : null
     }

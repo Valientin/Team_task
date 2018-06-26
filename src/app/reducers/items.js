@@ -5,7 +5,7 @@ const initialState = {
   itemsById: {
     'f42145fs': {
       name: 'First items with custom name',
-      comments: ['asd','asdasdasda','asdasdasdadasd'],
+      comments: ["asdasda","asdasd"],
       active: false
     },
     'r2351dfad': {
@@ -15,6 +15,7 @@ const initialState = {
     }
   }
 }
+export {initialState}
 
 export function items(state = initialState, action) {
   switch (action.type) {
