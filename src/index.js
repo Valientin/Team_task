@@ -10,7 +10,7 @@ import mySaga from './app/sagas'
 import reducers from './app/reducers';
 
 import Routes from './routes/index';
-import './index.css';
+import './index.scss';
 
 const sagaMiddleware = createSagaMiddleware();
 

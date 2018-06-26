@@ -1,18 +1,19 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import Items from '../components/Items'
-import * as items from '../app/actions/items'
+import {addItem} from '../app/actions/items'
 
 function mapDispatchToProps(dispatch){
     return {
-        
+        addItem: (item, id) => dispatch(addItem(item, id))
     }
 }
 
 
 const mapStateToProps = (state) => {
     return{
-		items: state.items.itemsById
+        items: state.items.items,
+        itemsById: state.items.itemsById
 	}
 };
 
