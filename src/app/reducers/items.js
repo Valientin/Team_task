@@ -52,7 +52,7 @@ export function items(state = initialState, action) {
         }
         return itemsActive[item].active = false;
       }))
-      return { ...state, itemsById: itemsActive }
+      return { ...state, itemsById: Object.create(itemsActive) }
     case DELETE_ITEM:
       return Object.assign({}, state, {
         items: [...state.items.filter(item => item !== action.payload)],

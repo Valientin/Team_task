@@ -104,7 +104,7 @@ class Items extends React.Component {
 
 
     showItems = (items, itemsById) => {
-        return Array.isArray(items)  ?
+        return Array.isArray(items) ?
             items.map((item, i) => (
                 <Item 
                     key={item} 
