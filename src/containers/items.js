@@ -15,6 +15,7 @@ function mapDispatchToProps(dispatch){
 
 
 const mapStateToProps = (state) => {
+    console.log(state)
     return{
         items: state.items.items,
         itemsById: state.items.itemsById

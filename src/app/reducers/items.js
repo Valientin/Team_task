@@ -29,7 +29,7 @@ const initialState = {
           text : 'asdddddddddddddd'
         },
       ],
-      active: true
+      active: false
     }
   }
 }
@@ -45,12 +45,14 @@ export function items(state = initialState, action) {
         itemsById: Object.assign(state.itemsById, action.payload.newItem)
       }
     case SET_ACTIVE:
-      return {
-        ...state,
-        active: state.items.map(
-           (item, i) =>  state.itemsById[item].active = false
-       )
-      }
+      const itemsActive = state.itemsById;
+      state.items.map((item => {
+        if(item === action.payload){
+          return itemsActive[item].active = true;
+        }
+        return itemsActive[item].active = false;
+      }))
+      return { ...state, itemsById: itemsActive }
     case DELETE_ITEM:
       return Object.assign({}, state, {
         items: [...state.items.filter(item => item !== action.payload)],

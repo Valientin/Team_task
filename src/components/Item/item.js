@@ -10,8 +10,8 @@ export default class Item extends React.Component{
 		this.props.deleteItem(this.props.id);
 	}
 	onTitleClick() {
-		this.props.showComments(this.props.id);
 		this.props.setActive(this.props.id);
+		this.props.showComments(this.props.id);
 	}
 
 	render(){
