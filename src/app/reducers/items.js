@@ -2,6 +2,7 @@ import { ADD_ITEM, SET_ACTIVE, DELETE_ITEM } from '../actions/actionTypes';
 
 const initialState = {
   items: ['f42145fs', 'r2351dfad'],
+  comments = false,
   itemsById: {
     'f42145fs': {
       name: 'First items with custom name',
@@ -52,7 +53,7 @@ export function items(state = initialState, action) {
         }
         return itemsActive[item].active = false;
       }))
-      return { ...state, itemsById: Object.create(itemsActive) }
+      return { ...state, itemsById: Object.create(itemsActive), comments: true }
     case DELETE_ITEM:
       return Object.assign({}, state, {
         items: [...state.items.filter(item => item !== action.payload)],
