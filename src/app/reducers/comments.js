@@ -12,7 +12,10 @@ export function comments(state = initialState, action) {
       }
     case SHOW_COMMENTS:
       return { ...state, 
-        comments: state.itemsById[action.payload].comments
+        activeComments: {
+          comments: state.itemsById[action.payload].comments,
+          id: Object.keys(state.itemsById).indexOf(action.payload) + 1
+        }
       }
     default:
       return state;

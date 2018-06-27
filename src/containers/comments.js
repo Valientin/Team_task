@@ -12,7 +12,7 @@ function mapDispatchToProps(dispatch){
 
 const mapStateToProps = (state) => {
     return{
-        comments: state.comments.comments
+        activeComments: state.comments.activeComments
 	}
 };
 

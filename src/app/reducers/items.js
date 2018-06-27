@@ -7,12 +7,12 @@ const initialState = {
       name: 'First items with custom name',
       comments: [
         {
-          logo : "yellow",
-          text : ['asd11111111111111ld']
+          logo : "#f18544",
+          text : 'asd11111111111111ld'
         },
         {
-          logo : "blue",
-          text : ['aфівфівфівфівфівфвфівdddd']
+          logo : "#4e84e8",
+          text : 'aфівфівфівфівфівфвфівdddd'
         },
       ],
       active: false
@@ -21,12 +21,12 @@ const initialState = {
       name: 'Second item is active',
       comments:[
         {
-          logo : "yellow",
-          text : ['asdsdjasdladshajldhjld']
+          logo : "#f18544",
+          text : 'asdsdjasdladshajldhjld'
         },
         {
-          logo : "blue",
-          text : ['asdddddddddddddd']
+          logo : "#4e84e8",
+          text : 'asdddddddddddddd'
         },
       ],
       active: true
