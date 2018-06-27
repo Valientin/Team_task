@@ -32,7 +32,7 @@ export default class Comments extends Component{
 
 	textAreaOnKeyPress(e){
 		if(e.ctrlKey && (e.key === 'Enter')){
-			console.log(this.state.textareaValue)
+			this.props.addComment(this.state.textareaValue, this.props.activeComments.keyId)
 			this.setState({
 				textareaValue: ''
 			})
@@ -42,16 +42,18 @@ export default class Comments extends Component{
 	render(){
 		const activeComments = this.props.activeComments;
 		return (
-			<div className = "comments-wrapper">
-                <h1 className="сomments-title">Comments #{activeComments ? activeComments.id : null}</h1>
-                <div className="comments-block">
-                    {this.showComments(this.props.activeComments)}
-                </div>
-				<div className="comments-add__block">
-					<div className="comments-block__logo" style={{background: '#eee'}}></div>
-					<textarea onKeyDown={(e) => this.textAreaOnKeyPress(e)} onChange={(e) => this.handleTextArea(e)}></textarea>
-                </div>
-            </div>
+			this.props.comments ?
+				<div className = "comments-wrapper">
+	                <h1 className="сomments-title">Comments #{activeComments ? activeComments.id : null}</h1>
+	                <div className="comments-block">
+	                    {this.showComments(this.props.activeComments)}
+	                </div>
+					<div className="comments-add__block">
+						<div className="comments-block__logo" style={{background: '#eee'}}></div>
+						<textarea value = {this.state.textareaValue}  onKeyDown={(e) => this.textAreaOnKeyPress(e)} onChange={(e) => this.handleTextArea(e)}></textarea>
+	                </div>
+	            </div>
+            :null
 		)
 	}
 }

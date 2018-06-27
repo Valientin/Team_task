@@ -51,9 +51,9 @@ export function items(state = initialState, action) {
         if(item === action.payload){
           return itemsActive[item].active = true;
         }
-        return itemsActive[item].active = false;
+        return itemsActive[item].active = false; 
       }))
-      return { ...state, itemsById: Object.create(itemsActive), comments: true }
+      return { ...state, itemsById: Object.create(itemsActive), comments: true, activeComments : {} }
     case DELETE_ITEM:
       return Object.assign({}, state, {
         items: [...state.items.filter(item => item !== action.payload)],

@@ -1,8 +1,10 @@
 import { ADD_COMMENT, SHOW_COMMENTS, SET_ACTIVE } from './actionTypes';
 
-export function addComment(comment, id) {
-	const newComment = {};
-	newComment[id] = comment; 
+export function addComment(comment, id) { 
+	const newComment = {
+		logo: '#eee',
+		text: comment
+	}
 	return {
 		type: ADD_COMMENT,
 		payload: {id, newComment}
