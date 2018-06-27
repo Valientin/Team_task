@@ -1,0 +1,16 @@
+.comments-wrapper {
+    max-width: 450px;
+    min-width: 400px;
+    width: 100%;
+    min-height: 550px;
+    background: #fff;
+    border: 3px solid #c3c3c3;
+    padding: 12px 25px;
+    margin: 0 20px 50px 0;
+}
+
+@media only screen and (max-width: 1100px) {
+    .comments-wrapper {
+        margin: 0 0 50px;
+    }
+}

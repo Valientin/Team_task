@@ -1,7 +1,7 @@
 import React, {Fragment, Component} from 'react';
 
 
-import './style.scss';
+import './comments.scss';
 
 
 export default class Comments extends Component{

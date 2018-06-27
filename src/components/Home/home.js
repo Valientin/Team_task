@@ -13,7 +13,7 @@ const Home = () => {
                 <h1 className="left-block__title">{title}</h1>
                 <h4 className="left-block__description">{description}</h4>
             </div>
-            <div className="right-block" style={{display: 'inline-block'}}>
+            <div className="right-block">
                 <Items />
                 <Comments />
             </div>
