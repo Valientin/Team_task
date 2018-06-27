@@ -31,8 +31,11 @@ export default class Comments extends Component{
 	}
 
 	textAreaOnKeyPress(e){
-		if(e.key === 'Enter'){
-			console.log(e.instanceOfKeyboardEvent)
+		if(e.ctrlKey && (e.key === 'Enter')){
+			console.log(this.state.textareaValue)
+			this.setState({
+				textareaValue: ''
+			})
 		}
 	}
 
@@ -46,7 +49,7 @@ export default class Comments extends Component{
                 </div>
 				<div className="comments-add__block">
 					<div className="comments-block__logo" style={{background: '#eee'}}></div>
-					<textarea onKeyPress={(e) => this.textAreaOnKeyPress(e)} onChange={(e) => this.handleTextArea(e)}></textarea>
+					<textarea onKeyDown={(e) => this.textAreaOnKeyPress(e)} onChange={(e) => this.handleTextArea(e)}></textarea>
                 </div>
             </div>
 		)
