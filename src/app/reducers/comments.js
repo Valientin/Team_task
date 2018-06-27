@@ -1,4 +1,4 @@
-import { ADD_COMMENT, SHOW_COMMENTS } from '../actions/actionTypes';
+import { ADD_COMMENT, SHOW_COMMENTS, SET_ACTIVE } from '../actions/actionTypes';
 
 import {initialState} from './items'
 

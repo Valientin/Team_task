@@ -36,6 +36,7 @@ const initialState = {
 export {initialState}
 
 export function items(state = initialState, action) {
+
   switch (action.type) {
     case ADD_ITEM:
       return {
@@ -45,7 +46,10 @@ export function items(state = initialState, action) {
       }
     case SET_ACTIVE:
       return {
-        ...state
+        ...state,
+        active: state.items.map(
+           (item, i) =>  state.itemsById[item].active = false
+       )
       }
     case DELETE_ITEM:
       return Object.assign({}, state, {

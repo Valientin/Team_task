@@ -1,4 +1,4 @@
-import { ADD_COMMENT, SHOW_COMMENTS } from './actionTypes';
+import { ADD_COMMENT, SHOW_COMMENTS, SET_ACTIVE } from './actionTypes';
 
 export function addComment(comment, id) {
 	const newComment = {};
@@ -12,6 +12,13 @@ export function addComment(comment, id) {
 export function showComments(id){
 	return {
 		type: SHOW_COMMENTS,
+		payload: id
+	}
+}
+
+export function setActive(id){
+	return {
+		type: SET_ACTIVE,
 		payload: id
 	}
 }
