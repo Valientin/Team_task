@@ -2,7 +2,7 @@ import { ADD_ITEM, SET_ACTIVE, DELETE_ITEM } from '../actions/actionTypes';
 
 const initialState = {
   items: ['f42145fs', 'r2351dfad'],
-  comments = false,
+  comments: false,
   itemsById: {
     'f42145fs': {
       name: 'First items with custom name',

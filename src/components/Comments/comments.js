@@ -6,8 +6,11 @@ import './comments.scss';
 
 export default class Comments extends Component{
 
-	componentWillReceiveProps(nextProps){
-		console.log(nextProps)
+	constructor(props){
+		super(props);
+		this.state = {
+			textareaValue: ''
+		}
 	}
 
 	showComments = (activeComments) => (
@@ -21,6 +24,18 @@ export default class Comments extends Component{
         : null
 	)
 
+	handleTextArea(e){
+		this.setState({
+			textareaValue: e.target.value
+		})
+	}
+
+	textAreaOnKeyPress(e){
+		if(e.key === 'Enter'){
+			console.log(e.instanceOfKeyboardEvent)
+		}
+	}
+
 	render(){
 		const activeComments = this.props.activeComments;
 		return (
@@ -29,8 +44,9 @@ export default class Comments extends Component{
                 <div className="comments-block">
                     {this.showComments(this.props.activeComments)}
                 </div>
-				<div className="items-add__block">
-    
+				<div className="comments-add__block">
+					<div className="comments-block__logo" style={{background: '#eee'}}></div>
+					<textarea onKeyPress={(e) => this.textAreaOnKeyPress(e)} onChange={(e) => this.handleTextArea(e)}></textarea>
                 </div>
             </div>
 		)
