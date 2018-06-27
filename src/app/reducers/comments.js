@@ -11,7 +11,9 @@ export function comments(state = initialState, action) {
         itemsById: Object.assign(state.itemsById, action.payload.newItem)
       }
     case SHOW_COMMENTS:
-      return { ...state, comments: state.itemsById[action.payload].comments }
+      return { ...state, 
+        comments: state.itemsById[action.payload].comments
+      }
     default:
       return state;
   }

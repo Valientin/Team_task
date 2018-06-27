@@ -5,12 +5,30 @@ const initialState = {
   itemsById: {
     'f42145fs': {
       name: 'First items with custom name',
-      comments: ["asdasda","asdasd"],
+      comments: [
+        {
+          logo : "yellow",
+          text : ['asd11111111111111ld']
+        },
+        {
+          logo : "blue",
+          text : ['aфівфівфівфівфівфвфівdddd']
+        },
+      ],
       active: false
     },
     'r2351dfad': {
       name: 'Second item is active',
-      comments: ['asdsdjasdladshajldhjld',],
+      comments:[
+        {
+          logo : "yellow",
+          text : ['asdsdjasdladshajldhjld']
+        },
+        {
+          logo : "blue",
+          text : ['asdddddddddddddd']
+        },
+      ],
       active: true
     }
   }
