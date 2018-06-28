@@ -13,15 +13,19 @@ export default class Comments extends Component{
 		}
 	}
 
+	componentWillReceiveProps(next){
+		console.log(next)
+	}
+
 	showComments = (activeComments) => (
-		activeComments ?
+		activeComments && (activeComments.comments.length > 0) ?
 			activeComments.comments.map((item, i) => (
 	            <div key={i} className="comments-block__item">
 					<div style={{background: item.logo}} className="comments-block__logo"></div>
 					<span className="comments-block__text">{item.text}</span>
 				</div>
 	        ))
-        : null
+        : <span className="comments-none__text">No comments</span>
 	)
 
 	handleTextArea(e){
@@ -45,12 +49,12 @@ export default class Comments extends Component{
 			this.props.comments ?
 				<div className = "comments-wrapper">
 	                <h1 className="сomments-title">Comments #{activeComments ? activeComments.id : null}</h1>
-	                <div className="comments-block">
-	                    {this.showComments(this.props.activeComments)}
+	                <div className={(activeComments.comments.length > 0) ? 'comments-block': 'comments-none'}>
+	                    {this.showComments(activeComments)}
 	                </div>
 					<div className="comments-add__block">
 						<div className="comments-block__logo" style={{background: '#eee'}}></div>
-						<textarea value = {this.state.textareaValue}  onKeyDown={(e) => this.textAreaOnKeyPress(e)} onChange={(e) => this.handleTextArea(e)}></textarea>
+						<textarea className="comments-block__textarea" value = {this.state.textareaValue}  onKeyDown={(e) => this.textAreaOnKeyPress(e)} onChange={(e) => this.handleTextArea(e)}></textarea>
 	                </div>
 	            </div>
             :null

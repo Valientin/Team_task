@@ -1,4 +1,4 @@
-import { ADD_ITEM, SET_ACTIVE, DELETE_ITEM } from '../actions/actionTypes';
+import { ADD_ITEM, SET_ACTIVE, DELETE_ITEM, ADD_COMMENT, SHOW_COMMENTS } from '../actions/actionTypes';
 
 const initialState = {
   items: ['f42145fs', 'r2351dfad'],
@@ -9,11 +9,11 @@ const initialState = {
       comments: [
         {
           logo : "#f18544",
-          text : 'asd11111111111111ld'
+          text : 'First comment(First item)'
         },
         {
           logo : "#4e84e8",
-          text : 'aфівфівфівфівфівфвфівdddd'
+          text : 'Second comment(First item)'
         },
       ],
       active: false
@@ -23,11 +23,11 @@ const initialState = {
       comments:[
         {
           logo : "#f18544",
-          text : 'asdsdjasdladshajldhjld'
+          text : 'First comment(Second item)'
         },
         {
           logo : "#4e84e8",
-          text : 'asdddddddddddddd'
+          text : 'Second comment(Second item)'
         },
       ],
       active: false
@@ -53,11 +53,34 @@ export function items(state = initialState, action) {
         }
         return itemsActive[item].active = false; 
       }))
-      return { ...state, itemsById: Object.create(itemsActive), comments: true, activeComments : {} }
+      return { ...state, itemsById: Object.assign({}, itemsActive), comments: true, activeComments : {} }
     case DELETE_ITEM:
-      return Object.assign({}, state, {
+      const newItemsById = state.itemsById;
+      state.items.map((item => {
+        return newItemsById[item].active = false; 
+      }))
+      delete newItemsById[action.payload];
+      return {
+        ...state,
         items: [...state.items.filter(item => item !== action.payload)],
-      });
+        itemsById: Object.assign({}, newItemsById),
+        comments: false
+      };
+    case ADD_COMMENT:
+      const newItemsWithComment = state.itemsById;
+      newItemsWithComment[action.payload.id].comments.push(action.payload.newComment);
+      return {
+        ...state,
+        itemsById : Object.assign({}, newItemsWithComment)
+      }  
+    case SHOW_COMMENTS:
+      return { ...state, 
+        activeComments: {
+          comments: state.itemsById[action.payload].comments,
+          id: Object.keys(state.itemsById).indexOf(action.payload) + 1,
+          keyId: action.payload
+        }
+      }
     default:
       return state;
   }

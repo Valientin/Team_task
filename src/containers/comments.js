@@ -1,7 +1,6 @@
-import React from 'react';
 import { connect } from 'react-redux';
 import Comments from '../components/Comments'
-import {showComments, addComment} from '../app/actions/comments'
+import {addComment} from '../app/actions/comments'
 
 function mapDispatchToProps(dispatch){
     return {
@@ -9,10 +8,9 @@ function mapDispatchToProps(dispatch){
     }
 }
 
-
 const mapStateToProps = (state) => {
     return{
-        activeComments: state.comments.activeComments,
+        activeComments: state.items.activeComments,
         comments: state.items.comments
 	}
 };

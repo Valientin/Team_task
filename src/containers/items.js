@@ -1,4 +1,3 @@
-import React from 'react';
 import { connect } from 'react-redux';
 import Items from '../components/Items'
 import {addItem, deleteItem, setActive} from '../app/actions/items'

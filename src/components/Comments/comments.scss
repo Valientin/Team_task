@@ -25,9 +25,17 @@
 
 .comments-block__item {
     display: flex;
-    position: relative;
     border-bottom: 2px solid #eee;
-    padding: 17px 0;
+    padding: 15px 0;
+
+    &:last-of-type{
+        border-bottom: 0;
+    }
+}
+
+.comments-block__text{
+    font-size: 13px;
+    color: #656464;
 }
 
 .comments-block__logo {
@@ -35,6 +43,26 @@
     max-width: 60px;
     width: 100%;
     margin-right: 15px;
+}
+
+.comments-none__text {
+    text-align: center;
+    display: block;
+    color: #8c8c8c;
+    font-style: italic;
+    font-size: 17px;
+}
+
+.comments-add__block {
+    display: flex;
+    margin-top: 25px;
+}
+
+.comments-block__textarea{
+    height: 80px;
+    width: 100%;
+    resize: none;
+    padding: 10px 5px;
 }
 
 @media only screen and (max-width: 1100px) {
